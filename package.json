@@ -1,0 +1,27 @@
+{
+  "name": "mcrobb.info",
+  "version": "3.0.0",
+  "description": "My personal portfolio written in Preact!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajm113/mcrobb.info2.git"
+  },
+  "keywords": [
+    "andrew",
+    "mcrobb",
+    "preact",
+    "portfolio",
+    "work",
+    "info"
+  ],
+  "author": "Andrew McRobb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajm113/mcrobb.info2/issues"
+  },
+  "homepage": "https://github.com/ajm113/mcrobb.info2#readme"
+}
