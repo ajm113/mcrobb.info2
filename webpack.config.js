@@ -31,7 +31,7 @@ module.exports = {
         ],
         alias: {
             components: path.join(SRC_PATH, "components"),    // used for tests
-            scss: path.join(SRC_PATH, "style")
+            style: path.join(SRC_PATH, "style")
         }
     },
     output: {

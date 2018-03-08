@@ -5,6 +5,7 @@ import '../style/style.scss';
 import 'normalize.css';
 
 import Header from './header';
+import Container from './container';
 import Home from './home';
 import About from './about';
 import Work from './work';
@@ -15,12 +16,14 @@ export default class App extends Component {
     return (
       <div id="app">
         <Header />
-        <Router>
-          <Home path="/" />
-          <About path="/about" />
-          <Work path="/work" />
-          <Contact path="/contact" />
-        </Router>
+        <Container>
+          <Router>
+            <Home  path="/" />
+            <About  path="/about" />
+            <Work path="/work" />
+            <Contact path="/contact" />
+            </Router>
+        </Container>
       </div>
     );
   }

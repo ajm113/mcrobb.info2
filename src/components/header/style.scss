@@ -1,0 +1,77 @@
+@import "~style/variables";
+
+
+@keyframes bounce {
+   0,100% {transform: translateY(0px); transform: rotate(0deg);}
+   40% {transform: translateY(-10px); transform: rotate(-5deg);}
+}
+
+header {
+  height: 100px;
+  background: #000;
+  background: linear-gradient(to bottom,
+    #000f21 0%,
+    $background 100%
+  );
+
+  text-align: center;
+
+  .headline {
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation: bounce 2s infinite cubic-bezier(.65,.05,.36,1);
+    color: red;
+  }
+
+  h1 {
+    margin: auto 0;
+    a {
+      &:after {
+        content: "McRobb";
+      }
+
+      &:hover {
+        &:after {
+          content: "Back Home";
+        }
+      }
+    }
+  }
+
+  nav {
+    margin-top: 10px;
+
+    > a {
+      font-size: 1.2em;
+      padding-left: 10px;
+      padding-bottom: 3px;
+      position: relative;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  @media (min-width: $screens-size-md) {
+    text-align: left;
+
+
+    .headline {
+      position: absolute;
+      left: 5px;
+      top: 35px;
+    }
+
+
+    h1 {
+      float: left;
+    }
+
+    nav {
+      float: right;
+      margin-right: 10px;
+    }
+
+  }
+}

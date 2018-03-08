@@ -1,0 +1,35 @@
+html {
+    /* Adjust font size */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    /* Font varient */
+    font-variant-ligatures: none;
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+
+body {
+  color: $text-color;
+  background: $background;
+  font-family: $text-font;
+}
+
+a {
+  color: $text-color;
+  transition: color 500ms;
+  text-decoration: none;
+  outline: none;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &.active,
+  &:hover {
+    color: darken($text-color, 50%);
+  }
+}
