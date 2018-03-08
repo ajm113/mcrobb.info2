@@ -1,0 +1,24 @@
+@import "~style/variables";
+
+.myform {
+    input,
+    textarea {
+        border: none;
+        border-bottom: 1px solid darken($text-color, 50%);
+        border-radius: 2px;
+        margin-bottom: 10px;
+        padding: 4px;
+
+        display: block;
+        width: 100%;
+        background: $background;
+        color: $text-color;
+    }
+
+    textarea {
+        border-bottom: none;
+        min-height: 200px;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
