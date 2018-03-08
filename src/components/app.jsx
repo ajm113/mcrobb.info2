@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import AsyncRoute from 'preact-async-route';
 
 import '../style/style.scss';
 import 'normalize.css';
@@ -7,9 +8,7 @@ import 'normalize.css';
 import Header from './header';
 import Container from './container';
 import Home from './home';
-import About from './about';
-import Work from './work';
-import Contact from './contact';
+import Footer from './footer';
 
 export default class App extends Component {
   render() {
@@ -19,11 +18,12 @@ export default class App extends Component {
         <Container>
           <Router>
             <Home  path="/" />
-            <About  path="/about" />
-            <Work path="/work" />
-            <Contact path="/contact" />
+            <AsyncRoute  path="/about" getComponent={() => import('./about').then(module => module.default)} />
+            <AsyncRoute path="/work" getComponent={() => import('./work').then(module => module.default)} />
+            <AsyncRoute path="/contact" getComponent={() => import('./contact').then(module => module.default)} />
             </Router>
         </Container>
+        <Footer/>
       </div>
     );
   }
