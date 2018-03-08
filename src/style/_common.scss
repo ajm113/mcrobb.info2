@@ -30,6 +30,6 @@ a {
 
   &.active,
   &:hover {
-    color: darken($text-color, 50%);
+    color: red;
   }
 }
