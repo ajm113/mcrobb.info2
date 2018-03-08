@@ -5,6 +5,7 @@ const webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
   OfflinePlugin = require('offline-plugin'),
+  WebpackPwaManifest = require('webpack-pwa-manifest'),
   path = require('path');
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -124,7 +125,7 @@ module.exports = {
             minify: { collapseWhitespace: true },
             filename: 'index.html'
         }),
-        //new WebpackPwaManifest(manifest),
+        new WebpackPwaManifest(manifest),
         new webpack.DefinePlugin({
               'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
