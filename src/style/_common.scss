@@ -18,6 +18,10 @@ body {
   font-family: $text-font;
 }
 
+h3 {
+    color: red;
+}
+
 a {
   color: $text-color;
   transition: color 500ms;
