@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import '../style/style.scss';
+import 'normalize.css';
 
 import Header from './header';
 import Home from './home';

@@ -6,6 +6,7 @@ const webpack = require('webpack'),
   autoprefixer = require('autoprefixer'),
   OfflinePlugin = require('offline-plugin'),
   WebpackPwaManifest = require('webpack-pwa-manifest'),
+  manifest = require('./manifest.js'),
   path = require('path');
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -121,7 +122,7 @@ module.exports = {
             disable: isDevelopment
         }),
         new HtmlWebpackPlugin({
-            title: 'McRobb.info',
+            title: manifest.name,
             minify: { collapseWhitespace: true },
             filename: 'index.html'
         }),
