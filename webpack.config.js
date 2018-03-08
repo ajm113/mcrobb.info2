@@ -129,7 +129,7 @@ module.exports = {
         new WebpackPwaManifest(manifest),
         new webpack.DefinePlugin({
               'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        })
+        }),
     ].concat( (!isDevelopment) ? [
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false, screw_ie8: true }
