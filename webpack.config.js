@@ -20,13 +20,17 @@ module.exports = {
         './app.js'
     ],
     mode: ENV,
+    devtool: isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
     resolve: {
         extensions: ['.jsx', '.js', '.json', '.scss'],
         modules: [
-          path.resolve(__dirname, "src/lib"),
           path.resolve(__dirname, "node_modules"),
           'node_modules'
         ],
+        alias: {
+            components: path.join(SRC_PATH, "components"),    // used for tests
+            scss: path.join(SRC_PATH, "style")
+        }
     },
     output: {
         path: DIST_PATH,
@@ -37,8 +41,20 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
+                exclude: SRC_PATH,
+                enforce: 'pre',
+                use: 'source-map-loader'
+            },
+            {
+                enforce: 'pre',
+                test: /\.(js|jsx)$/,
+                exclude: [/node_modules/, DIST_PATH],
+                use: ['eslint-loader']
+            },
+            {
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: 'babel-loader'
             },
             {
                 test:  /\.(scss|css)$/,
@@ -94,6 +110,45 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new ExtractTextPlugin({
+            filename: 'style.css',
+            allChunks: true,
+            disable: isDevelopment
+        }),
+        new HtmlWebpackPlugin({
+            title: 'McRobb.info',
+            minify: { collapseWhitespace: true },
+            filename: 'index.html'
+        }),
+        //new WebpackPwaManifest(manifest),
+        new webpack.DefinePlugin({
+              'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
+    ].concat( (!isDevelopment) ? [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false, screw_ie8: true }
+        }),
+        new OfflinePlugin({
+            relativePaths: false,
+            AppCache: false,
+            excludes: ['_redirects'],
+            ServiceWorker: {
+                events: true
+            },
+            cacheMaps: [
+                {
+                    match: /.*/,
+                    to: '/',
+                    requestTypes: ['navigate']
+                }
+            ],
+            publicPath: '/'
+        })
+    ] : []),
     stats: { colors: true },
     node: {
       global: true,
