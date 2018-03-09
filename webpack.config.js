@@ -124,7 +124,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: manifest.name,
             minify: { collapseWhitespace: true },
-            filename: 'index.html'
+            filename: 'index.html',
+            template: './template.ejs'
         }),
         new WebpackPwaManifest(manifest),
         new webpack.DefinePlugin({

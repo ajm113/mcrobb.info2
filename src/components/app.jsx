@@ -10,13 +10,15 @@ import Container from './container';
 import Home from './home';
 import Footer from './footer';
 
+import createHashHistory from 'history/createHashHistory';
+
 export default class App extends Component {
   render() {
     return (
       <div id="app">
         <Header />
         <Container>
-          <Router>
+          <Router history={createHashHistory()}>
             <Home  path="/" />
             <AsyncRoute  path="/about" getComponent={() => import('./about').then(module => module.default)} />
             <AsyncRoute path="/work" getComponent={() => import('./work').then(module => module.default)} />

@@ -29,6 +29,7 @@
   "homepage": "http://mcrobb.info",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "history": "^4.7.2",
     "normalize.css": "^8.0.0",
     "preact": "^8.2.7",
     "preact-async-route": "^2.1.1",
