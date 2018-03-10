@@ -2,6 +2,7 @@
 
 const webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CleanWebpackPlugin = require('clean-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
@@ -23,7 +24,7 @@ module.exports = {
         './app.js'
     ],
     mode: ENV,
-    devtool: !isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
     resolve: {
         extensions: ['.jsx', '.js', '.json', '.scss'],
         modules: [
@@ -37,7 +38,7 @@ module.exports = {
     },
     output: {
         path: DIST_PATH,
-        filename: '[name]-[hash].min.js',
+        filename: '[name]-[hash].js',
         publicPath: '/'
     },
     module : {
@@ -113,6 +114,9 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+         minimize: false
+    },
     plugins: [
         new CleanWebpackPlugin([DIST_PATH]),
         new webpack.optimize.OccurrenceOrderPlugin(),
@@ -134,19 +138,6 @@ module.exports = {
               'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
     ].concat( (!isDevelopment) ? [
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: true,
-            compress: {
-                warnings: false,
-                screw_ie8: true,
-                dead_code: true,
-                unused: true,
-                drop_console: true,
-            },
-            output: {
-                comments: false
-            }
-        }),
         new OfflinePlugin({
             relativePaths: false,
             AppCache: false,
