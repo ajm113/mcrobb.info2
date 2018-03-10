@@ -2,7 +2,6 @@
 
 const webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CleanWebpackPlugin = require('clean-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
@@ -115,7 +114,7 @@ module.exports = {
         ]
     },
     optimization: {
-         minimize: false
+         minimize: !isDevelopment
     },
     plugins: [
         new CleanWebpackPlugin([DIST_PATH]),
@@ -143,7 +142,8 @@ module.exports = {
             AppCache: false,
             excludes: ['_redirects'],
             ServiceWorker: {
-                events: true
+                events: true,
+                minify: false // The devs need to make this webpack 4 friendly still.
             },
             cacheMaps: [
                 {
