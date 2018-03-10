@@ -1,6 +1,31 @@
 {
   "icons": [
     {
+      "src": "/icon_1024x1024.5ed3b8c85a64bceb2ae53e00ec676e09.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_180x180.a43b8e3969c408a670c80aaafe06052a.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_167x167.77a6c4df73b2468c531e45f1bd91e83c.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_152x152.929845cf1f6c5e1243e6b61171504b69.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_120x120.fd5378da8d97d35579e59b338dd2dbb8.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
       "src": "/icon_512x512.b9441264786a0f25d4d36f412e7c1eb0.png",
       "sizes": "512x512",
       "type": "image/png"
