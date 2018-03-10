@@ -3,6 +3,7 @@
 const webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
+  CleanWebpackPlugin = require('clean-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
   OfflinePlugin = require('offline-plugin'),
   WebpackPwaManifest = require('webpack-pwa-manifest'),
@@ -22,7 +23,7 @@ module.exports = {
         './app.js'
     ],
     mode: ENV,
-    devtool: isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: !isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
     resolve: {
         extensions: ['.jsx', '.js', '.json', '.scss'],
         modules: [
@@ -113,6 +114,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin([DIST_PATH]),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
@@ -133,7 +135,17 @@ module.exports = {
         }),
     ].concat( (!isDevelopment) ? [
         new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false, screw_ie8: true }
+            mangle: true,
+            compress: {
+                warnings: false,
+                screw_ie8: true,
+                dead_code: true,
+                unused: true,
+                drop_console: true,
+            },
+            output: {
+                comments: false
+            }
         }),
         new OfflinePlugin({
             relativePaths: false,
