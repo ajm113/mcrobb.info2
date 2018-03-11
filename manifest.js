@@ -10,7 +10,12 @@ module.exports = {
     icons: [
       {
         src: path.resolve('src/images/icon-large.png'),
-        sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+      },
+      {
+        src: path.resolve('src/images/icon-large.png'),
+        sizes: [120, 152, 167, 180, 1024], // multiple sizes
+        ios: true
       }
     ]
 };

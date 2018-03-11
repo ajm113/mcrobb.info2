@@ -2,6 +2,9 @@ import { h, render } from 'preact';
 
 require('file-loader?name=CNAME!./CNAME');
 
+import 'es5-shim';
+import 'es6-shim';
+
 let root;
 function init() {
   let App = require('./components/app').default;
