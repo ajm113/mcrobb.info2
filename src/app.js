@@ -4,6 +4,7 @@ require('file-loader?name=CNAME!./CNAME');
 
 import 'es5-shim';
 import 'es6-shim';
+import 'whatwg-fetch';
 
 let root;
 function init() {
