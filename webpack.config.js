@@ -19,6 +19,7 @@ const isDevelopment = (ENV ==='development') ? true : false;
 module.exports = {
     context: SRC_PATH,
     entry: [
+        'promise-polyfill',
         'whatwg-fetch',
         'babel-polyfill',
         './app.js'
