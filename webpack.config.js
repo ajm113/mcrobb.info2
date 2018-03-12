@@ -19,13 +19,13 @@ const isDevelopment = (ENV ==='development') ? true : false;
 module.exports = {
     context: SRC_PATH,
     entry: [
+        'babel-polyfill',
         'promise-polyfill',
         'whatwg-fetch',
-        'babel-polyfill',
         './app.js'
     ],
     mode: ENV,
-    devtool: isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: !isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
     resolve: {
         extensions: ['.jsx', '.js', '.json', '.scss'],
         modules: [

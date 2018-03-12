@@ -3,7 +3,7 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 4 versions"]
+        "browsers": ["last 4 versions", "chrome >= 41"]
       }
     }],
     "stage-0"
