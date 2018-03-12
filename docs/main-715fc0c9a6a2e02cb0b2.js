@@ -89,7 +89,7 @@
 /******/ 	}
 /******/
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ad6724ad9f677529ce57"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "715fc0c9a6a2e02cb0b2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -15859,8 +15859,6 @@ module.exports = g;
 
 __webpack_require__(/*! whatwg-fetch */ "../node_modules/whatwg-fetch/fetch.js");
 
-__webpack_require__(/*! babel-polyfill */ "../node_modules/babel-polyfill/lib/index.js");
-
 __webpack_require__(/*! promise-polyfill */ "../node_modules/promise-polyfill/lib/index.js");
 
 var _preact = __webpack_require__(/*! preact */ "../node_modules/preact/dist/preact.esm.js");
@@ -16466,18 +16464,18 @@ if(true) {
 
 /***/ 0:
 /*!*******************************************************************!*\
-  !*** multi promise-polyfill whatwg-fetch babel-polyfill ./app.js ***!
+  !*** multi babel-polyfill promise-polyfill whatwg-fetch ./app.js ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! babel-polyfill */"../node_modules/babel-polyfill/lib/index.js");
 __webpack_require__(/*! promise-polyfill */"../node_modules/promise-polyfill/lib/index.js");
 __webpack_require__(/*! whatwg-fetch */"../node_modules/whatwg-fetch/fetch.js");
-__webpack_require__(/*! babel-polyfill */"../node_modules/babel-polyfill/lib/index.js");
 module.exports = __webpack_require__(/*! ./app.js */"./app.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main-ad6724ad9f677529ce57.js.map
+//# sourceMappingURL=main-715fc0c9a6a2e02cb0b2.js.map
