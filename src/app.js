@@ -1,5 +1,3 @@
-import 'es5-shim';
-import 'es6-shim';
 import 'whatwg-fetch';
 import 'babel-polyfill';
 import 'promise-polyfill';
