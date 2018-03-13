@@ -5,6 +5,7 @@ import { h, render } from 'preact';
 
 require('file-loader?name=CNAME!./CNAME');
 
+
 let root;
 function init() {
   let App = require('./components/app').default;

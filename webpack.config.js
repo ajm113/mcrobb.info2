@@ -121,7 +121,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin([DIST_PATH]),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin({
             filename: 'style.css',
@@ -134,11 +133,11 @@ module.exports = {
             filename: 'index.html',
             template: './template.ejs'
         }),
-        new WebpackPwaManifest(manifest),
         new webpack.DefinePlugin({
               'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
     ].concat( (!isDevelopment) ? [
+        new WebpackPwaManifest(manifest),
         new OfflinePlugin({
             relativePaths: false,
             AppCache: false,
@@ -156,7 +155,9 @@ module.exports = {
             ],
             publicPath: '/'
         })
-    ] : []),
+    ] : [
+        new webpack.HotModuleReplacementPlugin(),
+    ]),
     stats: { colors: true },
     node: {
       global: true,
