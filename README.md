@@ -1,6 +1,6 @@
-# McRobb.info (2)
+# McRobb.info NOW 100% SEO Friendly! 
 
-:guitar: Ready-to-rock [Preact] McRobb.info portfolio powered by [webpack]. **[(View Website)](http://mcrobb.info)**
+:guitar: Ready-to-rock [Preact] McRobb.info portfolio powered by [webpack 4]. **[(View Website)](http://mcrobb.info)**
 
 ---
 
