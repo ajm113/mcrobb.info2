@@ -3,7 +3,9 @@ import 'promise-polyfill';
 
 import { h, render } from 'preact';
 
+// SEO and GitHub Pages Stuff
 require('file-loader?name=CNAME!./CNAME');
+require('file-loader?name=robots.txt!./robots.txt');
 
 
 let root;

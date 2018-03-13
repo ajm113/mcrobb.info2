@@ -7,6 +7,7 @@ module.exports = {
     description: 'Everything about Andrew McRobb!',
     ios: true,
     background_color: '#000000',
+    theme_color: '#000000',
     icons: [
       {
         src: path.resolve('src/images/icon-large.png'),

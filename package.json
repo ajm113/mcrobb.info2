@@ -69,6 +69,7 @@
     "offline-plugin": "^4.9.0",
     "postcss-loader": "^2.1.1",
     "sass-loader": "^6.0.7",
+    "sitemap-webpack-plugin": "^0.6.0",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",
     "webpack": "^4.1.1",

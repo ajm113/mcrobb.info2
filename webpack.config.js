@@ -7,7 +7,9 @@ const webpack = require('webpack'),
   autoprefixer = require('autoprefixer'),
   OfflinePlugin = require('offline-plugin'),
   WebpackPwaManifest = require('webpack-pwa-manifest'),
+  SitemapPlugin = require('sitemap-webpack-plugin').default,
   manifest = require('./manifest.js'),
+  sitemapPaths = require('./sitemap.paths.js'),
   path = require('path');
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -18,12 +20,14 @@ const isDevelopment = (ENV ==='development') ? true : false;
 
 module.exports = {
     context: SRC_PATH,
-    entry: [
-        'babel-polyfill',
-        'promise-polyfill',
-        'whatwg-fetch',
-        './app.js'
-    ],
+    entry: {
+        app: './app.js',
+        polyfills: [
+            'babel-polyfill',
+            'promise-polyfill',
+            'whatwg-fetch'
+        ]
+    },
     mode: ENV,
     devtool: !isDevelopment ? 'source-map' : 'cheap-module-eval-source-map',
     resolve: {
@@ -154,7 +158,11 @@ module.exports = {
                 }
             ],
             publicPath: '/'
-        })
+        }),
+        new SitemapPlugin('http://mcrobb.info', sitemapPaths, {
+                changeFreq: 'monthly',
+            }
+        )
     ] : [
         new webpack.HotModuleReplacementPlugin(),
     ]),
