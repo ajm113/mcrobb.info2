@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://mcrobb.info/sitemap.xml
