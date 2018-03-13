@@ -18,6 +18,9 @@ const DIST_PATH = path.join(__dirname, 'docs/');
 
 const isDevelopment = (ENV ==='development') ? true : false;
 
+const currentDate = new Date();
+const CURRENT_DATE_STAMP = currentDate.getFullYear() + '-' + currentDate.getMonth() + '-' + currentDate.getDate();
+
 module.exports = {
     context: SRC_PATH,
     entry: {
@@ -161,6 +164,7 @@ module.exports = {
         }),
         new SitemapPlugin('http://mcrobb.info', sitemapPaths, {
                 changeFreq: 'monthly',
+                lastMod: CURRENT_DATE_STAMP,
             }
         )
     ] : [
