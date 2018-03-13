@@ -4,6 +4,7 @@
 
 ---
 
+![SEO READY](https://github.com/ajm113/mcrobb.info2/raw/master/seo.png "SEO READY Website!")
 
 ## Installation
 
