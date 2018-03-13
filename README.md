@@ -25,6 +25,25 @@ npm install
 > You're done installing! Now let's get started developing.
 
 
+## Working w/ Project
+
+**Running Dev Server**
+
+```sh
+npm run start
+```
+
+
+**Pushing To Production**
+
+```sh
+npm run prod
+git add docs/
+git commit -m "Production build"
+git push origin master
+```
+
+
 ## License
 
 Copyright 2018 Andrew McRobb
