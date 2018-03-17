@@ -160,23 +160,18 @@ module.exports = {
     ].concat( (!isDevelopment) ? [
         new WebpackPwaManifest(manifest),
         new OfflinePlugin({
-            version: '[hash]',
             relativePaths: false,
             excludes: ['_redirects'],
-            responseStrategy: 'cache-first',
             safeToUseOptionalCaches: true,
             caches: {
-                main: ['index.html', '[name]-[hash].js', 'style.css'],
-                additional: ['*.chunk.js', '*.worker.js', ':externals:'],
+                main: ['index.html', 'app-*.js', 'polyfills-*.js', 'style.css'],
                 optional: [':rest:']
             },
             ServiceWorker: {
                 events: true,
                 minify: false // The devs need to make this webpack 4 friendly still.
             },
-            AppCache: {
-                FALLBACK: { '/': '/' }
-            },
+            AppCache: false,
             cacheMaps: [
                 {
                     match: /.*/,
