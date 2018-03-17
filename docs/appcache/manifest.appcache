@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#ver:ef3dd0f7a09dc10044047dc0d0115961b24ce452
+#plugin:4.9.0
+
+CACHE:
+/
+/style.css
+
+NETWORK:
+*
+
+FALLBACK:
+/ /
