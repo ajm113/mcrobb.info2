@@ -15,13 +15,6 @@
         color: $text-color;
     }
 
-    textarea {
-        border-bottom: none;
-        min-height: 200px;
-        max-width: 100%;
-        min-width: 100%;
-    }
-
     button {
         background: lighten($background, 15%);
         border: none;
