@@ -147,7 +147,10 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: manifest.name,
-            minify: { collapseWhitespace: true },
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true
+            },
             filename: 'index.html',
             template: './template.ejs'
         }),
@@ -157,12 +160,22 @@ module.exports = {
     ].concat( (!isDevelopment) ? [
         new WebpackPwaManifest(manifest),
         new OfflinePlugin({
+            version: '[hash]',
             relativePaths: false,
-            AppCache: false,
             excludes: ['_redirects'],
+            responseStrategy: 'cache-first',
+            safeToUseOptionalCaches: true,
+            caches: {
+                main: ['index.html', '[name]-[hash].js', 'style.css'],
+                additional: ['*.chunk.js', '*.worker.js', ':externals:'],
+                optional: [':rest:']
+            },
             ServiceWorker: {
                 events: true,
                 minify: false // The devs need to make this webpack 4 friendly still.
+            },
+            AppCache: {
+                FALLBACK: { '/': '/' }
             },
             cacheMaps: [
                 {
