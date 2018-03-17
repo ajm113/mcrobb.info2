@@ -41,7 +41,8 @@ module.exports = {
         ],
         alias: {
             components: path.join(SRC_PATH, "components"),    // used for tests
-            style: path.join(SRC_PATH, "style")
+            style: path.join(SRC_PATH, "style"),
+            images: path.join(SRC_PATH, "images")
         }
     },
     output: {
@@ -119,6 +120,16 @@ module.exports = {
                         }
                     ]
                 })
+            },
+            {
+                test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8000,
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
             }
         ]
     },
