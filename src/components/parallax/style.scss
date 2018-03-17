@@ -1,0 +1,22 @@
+.parallaxWapper {
+    position: relative;
+    display: block;
+    height: 40vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 50px;
+}
+
+.parallax {
+    &::after {
+        display: block;
+        height: 40vh;
+        width: 100%;
+        content: " ";
+        z-index: -1;
+        background-size: cover;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-image: url('images/parallax.jpg');
+    }
+}

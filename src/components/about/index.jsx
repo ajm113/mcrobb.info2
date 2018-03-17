@@ -3,7 +3,8 @@ import { h } from 'preact';
 export default () => {
   return (
     <div>
-        <h1>All About McRobb</h1>
+        <h1 class="title">All About McRobb</h1>
+        <hr/>
         <p>
             Andrew McRobb is a professional software/web developer, currently living in Arizona, U.S.
             Inside the industry for 5 amazing years. Working from small start ups to large clients such as ASU as a Sr Developer. Currently works for Axion Communications

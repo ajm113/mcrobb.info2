@@ -8,11 +8,7 @@
 
 header {
   height: 100px;
-  background: #000;
-  background: linear-gradient(to bottom,
-    #000f21 0%,
-    $background 100%
-  );
+  background: #a74c31;
 
   text-align: center;
 
@@ -20,7 +16,8 @@ header {
     animation-fill-mode: both;
     animation-duration: 1s;
     animation: bounce 2s infinite cubic-bezier(.65,.05,.36,1);
-    color: red;
+    color: #dde300;
+    z-index: 999999;
   }
 
   h1 {
@@ -57,7 +54,7 @@ header {
 
   @media (min-width: $screens-size-md) {
     text-align: left;
-
+    height: 55px;
 
     .headline {
       position: absolute;

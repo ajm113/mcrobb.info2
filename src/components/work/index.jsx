@@ -4,7 +4,8 @@ import RepoList from '../repoList';
 export default () => {
   return (
     <div>
-      <h1>Commercial Projects / Employeers</h1>
+      <h1 class="title">Commercial Projects / Employeers</h1>
+      <hr />
       <h3>Axion Communications - Software Developer</h3>
       <i>October 2017 - Current</i>
       <ul>
@@ -53,7 +54,8 @@ export default () => {
       </ul>
 
       <h2>... And many more!</h2>
-      <h1>Open Source Projects</h1>
+      <h1 class="title">Open Source Projects</h1>
+      <hr />
       <p>
         <i>Everything from small old pieces of code to larger newer projects!</i>
       </p>

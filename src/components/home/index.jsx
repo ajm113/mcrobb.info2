@@ -4,7 +4,8 @@ import { Link } from 'preact-router/match';
 export default () => {
     return (
         <div>
-            <h1>Everything Andrew McRobb</h1>
+            <h1 class="title">Everything Andrew McRobb</h1>
+            <hr />
             <p><i>
                 Everything software! Front-end, back-end, DevOps, System Admin, Photographer, Newbie Car Repair Guy!
             </i></p>
